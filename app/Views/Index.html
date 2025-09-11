@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - PlayZone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #92d14f; /* Verde oscuro del fondo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 20px;
+            padding: 50px;
+            background-color: #92d14f; /* Verde del fondo */
+            width: 100%;
+            max-width: 1400px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .top-section {
+            display: flex;
+            align-items: center;
+            grid-column: 1 / span 3;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .logo {
+            font-size: 3em;
+            font-weight: bold;
+            color: #2e8b57; /* Verde azulado del logo */
+        }
+
+        .menu-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu-button {
+            padding: 15px 30px;
+            background-color: #4169e1; /* Azul de los botones */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .ball-image {
+            max-height: 100px;
+            width: auto;
+        }
+
+        .content-box {
+            grid-column: 1 / span 2;
+            padding: 40px;
+            background-color: #4169e1; /* Azul del recuadro grande */
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-box p {
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            margin: 0;
+        }
+
+        .login-box {
+            grid-column: 3;
+            padding: 30px;
+            background-color: #2e8b57; /* Verde oscuro del formulario */
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .login-box h2 {
+            margin-top: 0;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .login-box label {
+            color: white;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .login-box input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="top-section">
+            <h1 class="logo">PlayZone</h1>
+            <div class="menu-buttons">
+                <a href="menuc.html" class="menu-button">Menú cliente</a>
+                <a href="menua.html" class="menu-button">Menú Administrador</a>
+            </div>
+           <img src="imagen1spirnt1.png" alt="Descripción de la imagen" width="250" height="250">
+        </div>
+
+        <div class="content-box">
+            <p>Espacio para jugar y competir.</p>
+        </div>
+
+        <div class="login-box">
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email">
+                <label for="password">contraseña</label>
+                <input type="password" id="password" name="password">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboradores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #92d14f; /* Fondo verde similar a la imagen */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-areas:
+                "header-menu header-menu"
+                "title-colaboradores collaborators-image"
+                "collaborators-list collaborators-image"
+                "title-maestro maestro-name";
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header-menu {
+            grid-area: header-menu;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .menu-button {
+            padding: 10px 20px;
+            background-color: #e51d28; /* Rojo similar a la imagen */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .title {
+            font-size: 3em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            justify-self: center;
+            align-self: center;
+            margin: 0;
+        }
+
+        .title-colaboradores {
+            grid-area: title-colaboradores;
+            color: #4CAF50;
+        }
+
+        .collaborators-list {
+            grid-area: collaborators-list;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .collaborator-box {
+            padding: 15px 30px;
+            background-color: white;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .collaborators-image {
+            grid-area: collaborators-image;
+            justify-self: center;
+            align-self: end;
+        }
+
+        .collaborators-image img {
+            max-height: 400px;
+            width: auto;
+            display: block;
+        }
+
+        .title-maestro {
+            grid-area: title-maestro;
+            color: white;
+        }
+
+        .maestro-name {
+            grid-area: maestro-name;
+            justify-self: end;
+            align-self: end;
+        }
+
+        .maestro-box {
+            padding: 15px 30px;
+            background-color: white;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="header-menu">
+            <a href="menuc.html" class="menu-button">Regresar al Menú</a>
+        </div>
+
+        <h1 class="title title-colaboradores">COLABORADORES</h1>
+        
+        <div class="collaborators-list">
+            <div class="collaborator-box">José Jorge Vega Palomo</div>
+            <div class="collaborator-box">Paula Fernanda Calderón Catalán</div>
+            <div class="collaborator-box">Sahra Sofía López Elías</div>
+        </div>
+
+        <div class="collaborators-image">
+            <img src="imagen3sprint1.png" alt="Niño jugando fútbol">
+        </div>
+
+        <h2 class="title title-maestro">MAESTRO A CARGO</h2>
+        
+        <div class="maestro-name">
+            <div class="maestro-box">Diego Martínez</div>
+        </div>
+    </div>
+
+</body>
+</html>

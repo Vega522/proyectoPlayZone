@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #92d14f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            width: 90%;
+            background-color: #92d14f;
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .menu-button {
+            padding: 10px 20px;
+            background-color: #e51d28;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-button:hover {
+            background-color: #c91924;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-size: 1.1em;
+            color: black;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            font-size: 1em;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .large-input {
+            width: 100%;
+        }
+
+        .radio-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .radio-buttons label {
+            background-color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .radio-buttons input[type="radio"] {
+            display: none;
+        }
+
+        .radio-buttons input[type="radio"]:checked + label {
+            background-color: #d8ffd8;
+            transform: scale(1.05);
+        }
+
+        .payment-button {
+            grid-column: 2;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="header">
+            <a href="menuc.html" class="menu-button">Regresar al Menú</a>
+        </div>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="nombre">Ingresa tu nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="nombre">
+            </div>
+            <div class="form-group">
+                <label for="apellido">Ingresa tu apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="apellido">
+            </div>
+            <div class="form-group">
+                <label for="telefono">Ingresa tu número de teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+502 0000 0000">
+            </div>
+            <div class="form-group">
+                <label for="fecha">Ingresa la fecha</label>
+                <input type="text" id="fecha" name="fecha" placeholder="dd/mm/aa">
+            </div>
+            <div class="form-group">
+                <label for="correo">Ingresa tu correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="correo@gmail.com">
+            </div>
+            <div class="form-group">
+                <label for="tarjeta">Número de tarjeta de crédito o débito</label>
+                <input type="text" id="tarjeta" name="tarjeta" placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="form-group">
+                <label>Escoge que cancha quieres</label>
+                <div class="radio-buttons">
+                    <input type="radio" id="cancha1" name="cancha" value="1">
+                    <label for="cancha1">1</label>
+                    <input type="radio" id="cancha2" name="cancha" value="2">
+                    <label for="cancha2">2</label>
+                </div>
+            </div>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Deportivo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main-container {
+            display: flex;
+            width: 95%;
+            max-width: 1500px;
+            height: 90vh;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar {
+            flex: 0 0 350px;
+            background-color: #92d14f;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 40px;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .menu-button {
+            display: block;
+            padding: 22px 20px;
+            background-color: #ffffff;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .menu-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        .content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Estilos para el botón de regresar a página principal */
+        .return-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #e51d28; /* Color rojo */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <a href="index.html" class="return-button">Regresar a página principal</a>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="menu-items">
+                <a href="informacion.html" class="menu-button">Información</a>
+                <a href="creditos.html" class="menu-button">créditos</a>
+                <a href="canchas.html" class="menu-button">canchas</a>
+                <a href="reserva.html" class="menu-button">reservas</a>
+                <a href="balones.html" class="menu-button">Alquiler de balones</a>
+                <a href="contacto.html" class="menu-button">contacto</a>
+            </div>
+        </div>
+        <div class="content">
+            <img src="imagen2sprint1.png" alt="Campo de fútbol de césped artificial">
+        </div>
+    </div>
+
+</body>
+</html>

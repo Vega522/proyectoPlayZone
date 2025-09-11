@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Administrador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main-container {
+            display: flex;
+            width: 95%;
+            max-width: 1500px;
+            height: 90vh;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar {
+            flex: 0 0 350px;
+            background-color: #92d14f;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 40px;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .menu-button {
+            display: block;
+            padding: 22px 20px;
+            background-color: #ffffff;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .menu-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            flex-grow: 1;
+            position: relative; /* Para poder posicionar el botón de regreso */
+        }
+
+        .content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .return-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #e51d28; /* Rojo del botón */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="menu-items">
+                <a href="listaclientes.html" class="menu-button">Lista de clientes</a>
+                <a href="modificaciones.html" class="menu-button">modificaciones</a>
+                <a href="horarios.html" class="menu-button">horarios</a>
+                <a href="datoscuentas.html" class="menu-button">Datos de cuentas</a>
+            </div>
+        </div>
+        <div class="content">
+            <img src="imagen2sprint1.png" alt="Campo de fútbol de césped artificial">
+            <a href="Index.html" class="return-button">Regresar a página principal</a>
+        </div>
+    </div>
+
+</body>
+</html>

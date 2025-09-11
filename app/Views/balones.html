@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de Balones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #92d14f; /* Fondo verde */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            max-width: 1200px;
+        }
+
+        .menu-button {
+            padding: 10px 20px;
+            background-color: #e51d28;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .rental-info {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .ball-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .ball-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .ball-title {
+            padding: 10px 25px;
+            background-color: white;
+            border-radius: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ball-box {
+            background-color: #92d14f;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            color: white;
+        }
+        
+        .ball-box img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .ball-box p {
+            font-weight: bold;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="menuc.html" class="menu-button">Regresar al Menú</a>
+        <div class="rental-info">EL ALQUILER DE TODOS LOS BALONES CUESTA Q.25.00 POR HORA</div>
+    </div>
+
+    <div class="ball-grid">
+        <div class="ball-card">
+            <div class="ball-title">balón # 1</div>
+            <div class="ball-box">
+                <p>TAMAÑO 5</p>
+                <img src="imagen6sprint1.png" alt="Balón Molten Vantaggio">
+            </div>
+        </div>
+        <div class="ball-card">
+            <div class="ball-title">balón # 2</div>
+            <div class="ball-box">
+                <p>TAMAÑO 4</p>
+                <img src="imagen7sprint1.png" alt="Balón Four Baby">
+            </div>
+        </div>
+        <div class="ball-card">
+            <div class="ball-title">balón # 3</div>
+            <div class="ball-box">
+                <p>DE FUTSAL</p>
+                <img src="imagen8sprint1.png" alt="Balón de Futsal Guatemala">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

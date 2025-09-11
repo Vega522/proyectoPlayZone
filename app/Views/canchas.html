@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canchas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #92d14f; /* Verde similar a la imagen */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+
+        .menu-button {
+            padding: 10px 20px;
+            background-color: #e51d28; /* Rojo similar a la imagen */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px; /* Espacio entre los recuadros */
+            margin-top: 50px;
+        }
+
+        .court-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .court-title {
+            padding: 15px 30px;
+            background-color: white;
+            border-radius: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .court-box {
+            background-color: #92d14f;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .court-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="menuc.html" class="menu-button">Regresar al Menú</a>
+    </div>
+
+    <div class="main-container">
+        <div class="court-section">
+            <div class="court-title">Cancha # 1</div>
+            <div class="court-box">
+                <img src="imagen4sprint1.png" alt="Cancha 1 de noche">
+            </div>
+        </div>
+        <div class="court-section">
+            <div class="court-title">Cancha # 2</div>
+            <div class="court-box">
+                <img src="imagen5sprint1.png" alt="Cancha 2 de noche">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
