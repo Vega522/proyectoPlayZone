@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - PlayZone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --green-light: #8bc34a;
+            --gray-box: #bdbdbd;
+            --red-text: #ff0000;
+            --black-text: #000000;
+        }
+
+        .admin-page-container {
+            background-color: var(--green-light);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+  .return-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #e51d28; /* Rojo del botón */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        .admin-header {
+            margin-bottom: 50px;
+        }
+
+        .admin-header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--red-text);
+        }
+
+        .login-box-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            background-color: var(--gray-box);
+            padding: 30px 40px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-box h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: var(--black-text);
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--black-text);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+
+        
+
+        .message {
+            margin-top: 15px;
+            color: #d9534f;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <main class="admin-page-container">
+        <header class="admin-header">
+            <h1>ADMINISTRADOR</h1>
+        </header>
+
+        <section class="login-box-container">
+            <div class="login-box">
+                <h2>Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Usuario</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">contraseña</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <button type="submit" class="login-button">Entrar</button>
+                    <div id="message" class="message"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const username = document.getElementById('username').value.toLowerCase();
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+
+            const usuariosValidos = {
+                'joseadmin': '123',
+                'paulaadmin': '123',
+                'sahraadmin': '123'
+            };
+
+            if (usuariosValidos[username] && usuariosValidos[username] === password) {
+                messageDiv.textContent = '';
+                
+                if (username === 'joseadmin') {
+                    window.location.href = "menua.html"; 
+                } else if (username === 'paulaadmin') {
+                    window.location.href = "menua.html";
+                } else if (username === 'sahraadmin') {
+                    window.location.href = "menua.html";
+                }
+            } else {
+                messageDiv.textContent = 'Datos incorrectos';
+            }
+        });
+    </script>
+
+    <a href="index.html" class="return-button">Regresar a pagina principal</a>
+</body>
+</html>
