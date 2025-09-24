@@ -1,105 +1,283 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificaciones</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #92d14f; /* Fondo verde */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modificaciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #92d14f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        .main-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            padding: 20px;
-            max-width: 1000px;
-            width: 100%;
-            box-sizing: border-box;
-        }
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 20px;
+      max-width: 1000px;
+      width: 100%;
+      box-sizing: border-box;
+    }
 
-        .header {
-            display: flex;
-            justify-content: flex-start;
-            width: 100%;
-        }
+    .header {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+    }
 
-        .menu-button {
-            padding: 10px 20px;
-            background-color: #e51d28; /* Rojo del botón */
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
+    .menu-button {
+      padding: 10px 20px;
+      background-color: #e51d28;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-        .sections-container {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            gap: 40px;
-        }
+    .sections-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      gap: 40px;
+    }
 
-        .modification-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            text-align: center;
-        }
+    .modification-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
 
-        .section-title {
-            padding: 15px 30px;
-            background-color: white;
-            border-radius: 15px;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .section-title {
+      padding: 15px 30px;
+      background-color: white;
+      border-radius: 15px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        .action-button {
-            display: block;
-            padding: 15px 30px;
-            background-color: #4CAF50; /* Verde oscuro de los botones */
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            box-sizing: border-box;
-        }
+    .action-button {
+      display: block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      margin: 5px 0;
+    }
 
-        .action-button.small-text {
-            font-size: 0.9em;
-        }
-    </style>
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+    }
+
+    td {
+      background-color: #f9f9f9;
+      padding: 10px;
+      text-align: center;
+    }
+
+    tr:hover {
+      background-color: #e0f7e0;
+    }
+
+    tr.seleccionada {
+      background-color: #fffa91 !important;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      text-align: left;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .modal-content input {
+      width: 100%;
+      margin: 8px 0;
+      padding: 8px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .close {
+      float: right;
+      cursor: pointer;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <div class="header">
-            <a href="menua.html" class="menu-button">Regresar al Menú</a>
-        </div>
-        
-        <div class="sections-container">
-            <div class="modification-section">
-                <div class="section-title">Modificar canchas</div>
-                <a href="#" class="action-button small-text">Seleccione la cancha que quiere modificar</a>
-                <a href="#" class="action-button">Eliminar cancha</a>
-                <a href="#" class="action-button">Agregar cancha</a>
-            </div>
+  <div class="main-container">
+    <div class="header">
+      <a href="menua.html" class="menu-button">Regresar al Menú</a>
+    </div>
+    
+    <div class="sections-container">
 
-            <div class="modification-section">
-                <div class="section-title">Modificar balones</div>
-                <a href="#" class="action-button">Modificar balones</a>
-                <a href="#" class="action-button">Eliminar balón</a>
-                <a href="#" class="action-button">Agregar balón</a>
-            </div>
+      <!-- Sección Canchas -->
+      <div class="modification-section">
+        <div class="section-title">Modificar canchas</div>
+        <table id="tablaCanchas">
+          <thead>
+            <tr><th>Foto</th><th>Nombre</th><th>Ubicación</th><th>Acción</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button class="action-button" onclick="abrirModal('cancha')">Agregar cancha</button>
+      </div>
+
+      <!-- Sección Balones -->
+      <div class="modification-section">
+        <div class="section-title">Modificar balones</div>
+        <table id="tablaBalones">
+          <thead>
+            <tr><th>Foto</th><th>Tamaño</th><th>Acción</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button class="action-button" onclick="abrirModal('balon')">Agregar balón</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <h2 id="modalTitulo"></h2>
+      <form id="formulario">
+        <div id="formCampos"></div>
+        <button type="submit" class="action-button">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let tipoActual = "";
+
+    function abrirModal(tipo) {
+      tipoActual = tipo;
+      document.getElementById("modal").style.display = "flex";
+      document.getElementById("modalTitulo").innerText =
+        tipo === "cancha" ? "Agregar Cancha" : "Agregar Balón";
+
+      let campos = "";
+      if (tipo === "cancha") {
+        campos += '<label>Foto:</label><input type="text" id="foto" placeholder="URL de la foto">';
+        campos += '<label>Nombre:</label><input type="text" id="nombre" placeholder="Nombre de la cancha">';
+        campos += '<label>Ubicación:</label><input type="text" id="ubicacion" placeholder="Ubicación">';
+      } else {
+        campos += '<label>Foto:</label><input type="text" id="foto" placeholder="URL de la foto">';
+        campos += '<label>Tamaño:</label><input type="text" id="tamano" placeholder="Tamaño del balón">';
+      }
+      document.getElementById("formCampos").innerHTML = campos;
+    }
+
+    function cerrarModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    document.getElementById("formulario").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Validación
+      let error = false;
+      if (tipoActual === "cancha") {
+        let foto = document.getElementById("foto").value.trim();
+        let nombre = document.getElementById("nombre").value.trim();
+        let ubicacion = document.getElementById("ubicacion").value.trim();
+
+        if (!foto || !nombre || !ubicacion) {
+          alert("Todos los campos son obligatorios.");
+          error = true;
+        }
+
+        if (!error) {
+          let fila = document.createElement("tr");
+          fila.innerHTML = `
+            <td><img src="${foto}" width="50"></td>
+            <td>${nombre}</td>
+            <td>${ubicacion}</td>
+            <td><button onclick="eliminarFila(this)">Eliminar</button></td>
+          `;
+          fila.onclick = () => seleccionarFila(fila);
+          document.querySelector("#tablaCanchas tbody").appendChild(fila);
+          cerrarModal();
+        }
+
+      } else {
+        let foto = document.getElementById("foto").value.trim();
+        let tamano = document.getElementById("tamano").value.trim();
+
+        if (!foto || !tamano) {
+          alert("Todos los campos son obligatorios.");
+          error = true;
+        }
+
+        if (!error) {
+          let fila = document.createElement("tr");
+          fila.innerHTML = `
+            <td><img src="${foto}" width="50"></td>
+            <td>${tamano}</td>
+            <td><button onclick="eliminarFila(this)">Eliminar</button></td>
+          `;
+          fila.onclick = () => seleccionarFila(fila);
+          document.querySelector("#tablaBalones tbody").appendChild(fila);
+          cerrarModal();
+        }
+      }
+    });
+
+    function eliminarFila(boton) {
+      boton.closest("tr").remove();
+    }
+
+    function seleccionarFila(fila) {
+      // Quitar selección de otras filas
+      const tabla = fila.closest("tbody");
+      Array.from(tabla.children).forEach(r => r.classList.remove("seleccionada"));
+      // Marcar la fila seleccionada
+      fila.classList.add("seleccionada");
+    }
+  </script>
+</body>
+</html>

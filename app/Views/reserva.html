@@ -171,3 +171,49 @@
                     <label for="cancha2">2</label>
                 </div>
             </div>
+            <div class="form-group">
+    <label>Escoge que balón quieres</label>
+    <div class="radio-buttons">
+        <input type="radio" id="balon1" name="balon" value="1">
+        <label for="balon1">1</label>
+        <input type="radio" id="balon2" name="balon" value="2">
+        <label for="balon2">2</label>
+        <input type="radio" id="balon3" name="balon" value="3">
+        <label for="balon3">3</label>
+    </div>
+</div>
+<button type="button" class="payment-button" onclick="enviarFormulario()">Enviar formulario</button>
+
+<script>
+function enviarFormulario() {
+    // Tomar valores de los inputs
+    const nombre = document.getElementById("nombre").value.trim();
+    const apellido = document.getElementById("apellido").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const fecha = document.getElementById("fecha").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const tarjeta = document.getElementById("tarjeta").value.trim();
+
+    // Tomar selección de cancha y balón
+    const canchaSeleccionada = document.querySelector('input[name="cancha"]:checked');
+    const balonSeleccionado = document.querySelector('input[name="balon"]:checked');
+
+    // Validación básica
+    if (!nombre || !apellido || !telefono || !fecha || !correo || !tarjeta || !canchaSeleccionada || !balonSeleccionado) {
+        alert("Por favor completa todos los campos y selecciona cancha y balón.");
+        return;
+    }
+
+    // Si todo está correcto, mostrar mensaje de envío
+    alert(`Formulario enviado correctamente!\n
+Nombre: ${nombre} ${apellido}\n
+Teléfono: ${telefono}\n
+Fecha: ${fecha}\n
+Correo: ${correo}\n
+Cancha seleccionada: ${canchaSeleccionada.value}\n
+Balón seleccionado: ${balonSeleccionado.value}`);
+    
+    // Opcional: limpiar el formulario
+    document.querySelector('form')?.reset();
+}
+</script>
